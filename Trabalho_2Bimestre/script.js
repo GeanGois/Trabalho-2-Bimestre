@@ -215,3 +215,66 @@ btCalcularLanche.onclick = function(){
 }           
 // Exerecicio 06 -------------------------------------------------------------
 
+// Exerecicio 07 -------------------------------------------------------------
+let inputvalorProduto = document.querySelector("#inputValorProduto");
+let inputCodigoPagamento = document.querySelector("#inputCodigoPagamento");
+let btCalcularPagamento = document.querySelector("#btCalcularPagamento");
+let h3ResultadoPagamento = document.querySelector("#h3ResultadoPagamento");
+
+function calcularPagamento(){
+    let valorProduto = Number(inputvalorProduto.value);
+    let codigoPagamento = Number(inputCodigoPagamento.value);
+    
+    let valorFinal = "";
+
+    if(codigoPagamento === 1){
+        valorFinal = valorProduto - (valorProduto * 0.1); 
+    }
+    else if(codigoPagamento === 2){
+        valorFinal = valorProduto - (valorProduto * 0.15); 
+    }
+    else if(codigoPagamento === 3){
+        valorFinal = valorProduto;
+    }
+    else if(codigoPagamento === 4){
+        valorFinal = valorProduto + (valorProduto * 0.1); 
+    }
+
+    h3ResultadoPagamento.innerHTML = "Valor final: R$ " + valorFinal.toFixed(2);
+}
+
+btCalcularPagamento.onclick = function(){
+    calcularPagamento();
+}           
+// Exerecicio 07 -------------------------------------------------------------
+
+// Exerecicio 08 -------------------------------------------------------------
+let inputNivelProfessor = document.querySelector("#inputNivelProfessor");
+let inputHoras = document.querySelector("#inputHoras");
+let btCalcularHoras = document.querySelector("#btCalcularHoras");
+let h3ResultadoHoras = document.querySelector("#h3ResultadoHoras");
+
+function calcularPagamentoHoras(){
+    let nivelProfessor = Number(inputNivelProfessor.value);
+    let horasTrabalhadas = Number(inputHoras.value);
+
+    let valorHora = 0;
+
+    if(nivelProfessor === 1){
+        valorHora = 12;
+    }
+    else if(nivelProfessor === 2){
+        valorHora = 17;
+    }
+    else if(nivelProfessor === 3){
+        valorHora = 25;
+    }
+    let pagamento = valorHora * horasTrabalhadas;
+
+    h3ResultadoHoras.innerHTML = "Valor a ser pago: R$ " + pagamento.toFixed(2);
+}
+
+btCalcularHoras.onclick = function(){
+    calcularPagamentoHoras();
+}
+// Exerecicio 08 -------------------------------------------------------------
